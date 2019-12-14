@@ -1,9 +1,24 @@
 import React from "react";
 import {
-  Box, Flex, Image, Text,
+  Box, Flex, Image, Text, useToast
 } from "@chakra-ui/core";
 export default () => {
   window.localStorage.setItem('darkMode', false);
+  const toast = useToast();
+
+  function updateOnlineStatus() {
+    console.log('navigator.onLine ', navigator.onLine);
+    toast({
+      title: "Connectivity",
+      description: navigator.onLine ? "You are online" : "You are offline",
+      status: navigator.onLine ? "success" : 'warning',
+      duration: 3000,
+      isClosable: true,
+    });
+  }
+  window.addEventListener('online',  updateOnlineStatus);
+  window.addEventListener('offline', updateOnlineStatus);
+
   return (
     <Flex
       bg="#253047"

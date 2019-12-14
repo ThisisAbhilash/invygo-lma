@@ -5,9 +5,10 @@ import { Box, Flex, Tabs, Tab, TabList, Button, Text, Code, Divider,
   AlertDialogBody,
   AlertDialogFooter,
   AlertDialogHeader,
-  AlertDialogContent,
+  AlertDialogContent, Heading,
   AlertDialogOverlay, } from "@chakra-ui/core";
 import { FaUser, FaCar, FaBookmark } from 'react-icons/fa';
+import { GiSandsOfTime } from "react-icons/gi";
 import moment from 'moment';
 import { fetchActivities } from "../api";
 import { getUserDetails, logout, isLoggedIn } from "../auth";
@@ -54,17 +55,19 @@ export default () => {
             {!activities.length && <Code mb='5'>No activities yet for the day ! 😄</Code>}
             {activities.length > 0 && 
               <>
-                <Code mb='5'>Showing {activities.length} activities ...</Code>
+                <Heading size="xs" ml='4' mb='5'>Showing {activities.length} activities ...</Heading>
                 <Accordion defaultIndex={[0]} allowMultiple>
                   {activities.map((o, index) => {
-                    const { bookingId, customerName, deliveryAddress, returnPickUpAddress, countryCode, mobile, returnPickUp, brandName, carName, plateNumber, pendingAmount } = o;
+                    const { bookingId, customerName, deliveryAddress, returnPickUpAddress, countryCode, mobile, 
+                      returnPickUp, brandName, carName, plateNumber, pendingAmount, bookingDateTime } = o;
                     const { longitude, latitude, companyAddress, addressName } = returnPickUp ? returnPickUpAddress : deliveryAddress;
                     return (
                       <>
                       <AccordionItem shadow="xs" borderWidth="1px" mb='5' key={index}>
-                        <AccordionHeader>
+                        <AccordionHeader style={{ minHeight: '20px' }}>
                           <Box as={FaBookmark} size="14px" mr='2' /> <Text fontSize='14px'>Booking No. {bookingId}</Text>
-                          <Box as={FaCar} color={returnPickUp ? 'red.400' : 'green.400'} size="14px" ml='3' mr='2' /> <Text fontSize='14px'>{returnPickUp ? 'Pick Up' : 'Delivery'}</Text>
+                          <Box as={FaCar} color={returnPickUp ? 'red.400' : 'green.400'} size="14px" ml='4' mr='2' /> <Text fontSize='14px'>{returnPickUp ? 'Pick Up' : 'Delivery'}</Text>
+                          <Box as={GiSandsOfTime} size="14px" ml='4' mr='2' /> <Text fontSize='14px'>{moment(bookingDateTime).format('HH:mm')} - {moment(bookingDateTime).add(3, 'h').format('HH:mm')}</Text>
                           <AccordionIcon ml='4' />
                         </AccordionHeader>
                           <AccordionPanel pb={4}>

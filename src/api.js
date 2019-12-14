@@ -24,7 +24,10 @@ const dummyData = [
     plateNumber: 'DXB 11 12345',
     countryCode: '971',
     mobile: '1234567890',
-    customerName: 'Test User 1'
+    customerName: 'Test User 1',
+    bookingDateTime : "2019-12-15T04:00:00.000+0000",
+    returnDateTime : "2020-01-30T04:00:00.000+0000",
+
 },
 { 
     "bookingId" : 176, 
@@ -50,7 +53,9 @@ const dummyData = [
     plateNumber: 'DXB 11 12345',
     countryCode: '971',
     mobile: '1234567890',
-    customerName: 'Test User 2'
+    customerName: 'Test User 2',
+    bookingDateTime : "2019-12-15T04:00:00.000+0000",
+    returnDateTime : "2020-01-30T04:00:00.000+0000",
 },
 {  
     "bookingId" : 175, 
@@ -76,7 +81,9 @@ const dummyData = [
     plateNumber: 'DXB 11 12345',
     countryCode: '971',
     mobile: '1234567890',
-    customerName: 'Test User 3'
+    customerName: 'Test User 3',
+    bookingDateTime : "2019-12-15T04:00:00.000+0000",
+    returnDateTime : "2020-01-30T04:00:00.000+0000",
 },
 {  
     "bookingId" : 1075,  
@@ -102,7 +109,9 @@ const dummyData = [
     plateNumber: 'DXB 11 12345',
     countryCode: '971',
     mobile: '1234567890',
-    customerName: 'Test User 4'
+    customerName: 'Test User 4',
+    bookingDateTime : "2019-12-15T04:00:00.000+0000",
+    returnDateTime : "2020-01-30T04:00:00.000+0000",
 },
 {  
     "bookingId" : 1375,  
@@ -128,7 +137,9 @@ const dummyData = [
     plateNumber: 'DXB 11 12345',
     countryCode: '971',
     mobile: '1234567890',
-    customerName: 'Test User 5'
+    customerName: 'Test User 5',
+    bookingDateTime : "2019-12-15T04:00:00.000+0000",
+    returnDateTime : "2020-01-30T04:00:00.000+0000",
 },
 {   
   "bookingId" : 1477,
@@ -155,7 +166,9 @@ const dummyData = [
   plateNumber: 'DXB 11 12345',
   countryCode: '971',
   mobile: '1234567890',
-  customerName: 'Test User 1'
+  customerName: 'Test User 1',
+  bookingDateTime : "2019-12-15T04:00:00.000+0000",
+  returnDateTime : "2020-01-30T04:00:00.000+0000",
 },
 { 
   "bookingId" : 176, 
@@ -181,7 +194,9 @@ const dummyData = [
   plateNumber: 'DXB 11 12345',
   countryCode: '971',
   mobile: '1234567890',
-  customerName: 'Test User 2'
+  customerName: 'Test User 2',
+  bookingDateTime : "2019-12-15T04:00:00.000+0000",
+  returnDateTime : "2020-01-30T04:00:00.000+0000",
 },
 {  
   "bookingId" : 175, 
@@ -207,7 +222,9 @@ const dummyData = [
   plateNumber: 'DXB 11 12345',
   countryCode: '971',
   mobile: '1234567890',
-  customerName: 'Test User 3'
+  customerName: 'Test User 3',
+  bookingDateTime : "2019-12-15T04:00:00.000+0000",
+  returnDateTime : "2020-01-30T04:00:00.000+0000",
 },
 {  
   "bookingId" : 1075,  
@@ -233,7 +250,9 @@ const dummyData = [
   plateNumber: 'DXB 11 12345',
   countryCode: '971',
   mobile: '1234567890',
-  customerName: 'Test User 4'
+  customerName: 'Test User 4',
+  bookingDateTime : "2019-12-15T04:00:00.000+0000",
+  returnDateTime : "2020-01-30T04:00:00.000+0000",
 },
 {  
   "bookingId" : 1375,  
@@ -259,7 +278,9 @@ const dummyData = [
   plateNumber: 'DXB 11 12345',
   countryCode: '971',
   mobile: '1234567890',
-  customerName: 'Test User 5'
+  customerName: 'Test User 5',
+  bookingDateTime : "2019-12-15T04:00:00.000+0000",
+  returnDateTime : "2020-01-30T04:00:00.000+0000",
 }
 ]
 export const apiSendOtp = mobile => new Promise((resolve) => setTimeout(() => resolve(1), 2000));
