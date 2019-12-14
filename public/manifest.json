@@ -2,10 +2,10 @@
   "name": "Invygo - Last Mile App",
   "short_name": "Invygo-LMA",
   "theme_color": "#2196f3",
-  "background_color": "#2196f3",
-  "display": "browser",
+  "background_color": "#ffffff",
+  "display": "standalone",
   "Scope": "/",
-  "start_url": "./index.html",
+  "start_url": ".",
   "icons": [
     {
       "src": "icon-72x72.png",
