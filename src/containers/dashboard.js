@@ -66,14 +66,18 @@ export default () => {
                       <>
                       <AccordionItem borderWidth="1px" mb='5' key={index}>
                         <AccordionHeader _expanded={{ bg: "tomato", color: "black" }}>
-                          <Box p={2} w="100%">
+                            <Box flex="1" textAlign="left">
+                              Booking No. {bookingId} Delivery
+                            </Box>
+                            <AccordionIcon />
+                          {/* <Box p={2} w="100%">
                               <Flex flexDirection="row" justifyContent="space-even">
                                 <Box as={FaBookmark} size="14px" mr='2' /> <Text fontSize='14px'>Booking No. {bookingId}</Text>
                                 <Box as={FaCar} color={returnPickUp ? 'red.400' : 'green.400'} size="14px" ml='4' mr='2' /> <Text fontSize='14px'>{returnPickUp ? 'Pick Up' : 'Delivery'}</Text>
                                 <Box as={GiSandsOfTime} size="14px" ml='4' mr='2' /> <Text fontSize='14px'>{moment(bookingDateTime).format('HH:mm')} - {moment(bookingDateTime).add(3, 'h').format('HH:mm')}</Text>
                                 <AccordionIcon ml='4' />
                               </Flex>
-                          </Box>
+                          </Box> */}
                         </AccordionHeader>
                           <AccordionPanel pb={4}>
                             <Box p={5} borderWidth="1px">
