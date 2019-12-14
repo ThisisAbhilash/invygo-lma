@@ -7,8 +7,9 @@ import { Box, Flex, Tabs, Tab, TabList, Button, Text, Code, Divider,
   AlertDialogHeader,
   AlertDialogContent, Heading,
   AlertDialogOverlay, } from "@chakra-ui/core";
-import { FaUser, FaCar, FaBookmark } from 'react-icons/fa';
+import { FaUser, FaCar, FaBookmark, FaWhatsappSquare } from 'react-icons/fa';
 import { GiSandsOfTime } from "react-icons/gi";
+import { FiPhoneCall } from "react-icons/fi";
 import moment from 'moment';
 import { fetchActivities } from "../api";
 import { getUserDetails, logout, isLoggedIn } from "../auth";
@@ -63,17 +64,25 @@ export default () => {
                     const { longitude, latitude, companyAddress, addressName } = returnPickUp ? returnPickUpAddress : deliveryAddress;
                     return (
                       <>
-                      <AccordionItem shadow="xs" borderWidth="1px" mb='5' key={index}>
-                        <AccordionHeader style={{ minHeight: '20px' }}>
-                          <Box as={FaBookmark} size="14px" mr='2' /> <Text fontSize='14px'>Booking No. {bookingId}</Text>
-                          <Box as={FaCar} color={returnPickUp ? 'red.400' : 'green.400'} size="14px" ml='4' mr='2' /> <Text fontSize='14px'>{returnPickUp ? 'Pick Up' : 'Delivery'}</Text>
-                          <Box as={GiSandsOfTime} size="14px" ml='4' mr='2' /> <Text fontSize='14px'>{moment(bookingDateTime).format('HH:mm')} - {moment(bookingDateTime).add(3, 'h').format('HH:mm')}</Text>
-                          <AccordionIcon ml='4' />
+                      <AccordionItem borderWidth="1px" mb='5' key={index}>
+                        <AccordionHeader _expanded={{ bg: "tomato", color: "black" }}>
+                          <Box p={2} w="100%">
+                              <Flex flexDirection="row" justifyContent="space-even">
+                                <Box as={FaBookmark} size="14px" mr='2' /> <Text fontSize='14px'>Booking No. {bookingId}</Text>
+                                <Box as={FaCar} color={returnPickUp ? 'red.400' : 'green.400'} size="14px" ml='4' mr='2' /> <Text fontSize='14px'>{returnPickUp ? 'Pick Up' : 'Delivery'}</Text>
+                                <Box as={GiSandsOfTime} size="14px" ml='4' mr='2' /> <Text fontSize='14px'>{moment(bookingDateTime).format('HH:mm')} - {moment(bookingDateTime).add(3, 'h').format('HH:mm')}</Text>
+                                <AccordionIcon ml='4' />
+                              </Flex>
+                          </Box>
                         </AccordionHeader>
                           <AccordionPanel pb={4}>
                             <Box p={5} borderWidth="1px">
                               <Text mt={2}>Customer Name : {customerName}</Text>
-                              <Text mt={2}>Customer Mobile : <a href={`tel:${countryCode}${mobile}`}>{countryCode}-{mobile}</a></Text>
+                              <Text mt={2}>
+                                Mobile : {countryCode}-{mobile}
+                                <a href={`tel:${countryCode}${mobile}`}><Box as={FiPhoneCall} color={'teal.400'} size="18px" ml='3' /></a>
+                                <a href={` https://wa.me/${countryCode}${mobile}`}><Box as={FaWhatsappSquare} color={'green.400'} size="18px" ml='5'/></a>
+                              </Text>
                               <Text mt={2}>Customer Address : <a href={`https://www.google.com/maps/search/?api=1&query=${latitude},${longitude}`}>{addressName}, {companyAddress}</a></Text>
                               <Text mt={2}>{brandName}, {carName} - {plateNumber}</Text>
                               {returnPickUp && <Text mt={2} color="red.500">Pending Amount :- AED {pendingAmount}</Text>}

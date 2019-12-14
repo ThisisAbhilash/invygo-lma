@@ -1,13 +1,12 @@
 import React from "react";
 import {
-  Box, Flex, Image, Text, useToast
+  Flex, Image, Text, useToast
 } from "@chakra-ui/core";
 export default () => {
   window.localStorage.setItem('darkMode', false);
   const toast = useToast();
 
   function updateOnlineStatus() {
-    console.log('navigator.onLine ', navigator.onLine);
     toast({
       title: "Connectivity",
       description: navigator.onLine ? "You are online" : "You are offline",
@@ -34,10 +33,8 @@ export default () => {
         />
         <Text pl={3} color="white">
           Invygo Last Mile
-          </Text>
+        </Text>
       </Flex>
-      <Box>
-      </Box>
     </Flex>
   );
 }
