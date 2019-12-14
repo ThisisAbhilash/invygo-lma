@@ -19,7 +19,7 @@
   "scripts": {
     "start:dev": "react-scripts start",
     "build": "react-scripts build && npm run build-sw && npm run clean-cra-sw",
-    "eject": "react-scripts eject",
+    "eject": "react-scripts eject ",
     "build-sw": "node ./src/sw-build.js",
     "clean-cra-sw": "rm -f build/precache-manifest.*.js && rm -f build/service-worker.js",
     "start": "NODE_ENV=production node server.js",
